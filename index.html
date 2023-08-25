@@ -11,27 +11,78 @@
         <div class="header-main">
             <h1>Petr Kotáb</h1>
             <div class="header-links">
-                <a href="https://github.com/yourusername"><img src="github.png" alt="GitHub"></a>
-                <a href="https://itch.io/yourusername"><img src="itchio.png" alt="itch.io"></a>
-                <a href="your_cv.pdf"><img src="cv.png" alt="CV"></a>
+                <a href="https://github.com/pedryx" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="https://pedryx.itch.io/" target="_blank"><img src="images/itchio.png" alt="itch.io"></a>
+                <a href="https://drive.google.com/file/d/1UZlOoxPhhGmeiDvdzA4fUZHb4bDMM4JC/view?usp=drive_link" target="_blank"><img src="images/cv.png" alt="CV"></a>
             </div>
         </div>
-
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-    </section>
-
     <section id="projects">
         <h2>Projects</h2>
+
+        <div class="project">
+            <div class="project-header">
+                <h3>Deliver or Die</h3>
+                <a href="https://github.com/pedryx/deliver-or-die" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="https://pedryx.itch.io/deliver-or-die" target="_blank"><img src="images/itchio.png" alt="itch.io"></a>
+                <a href="https://ldjam.com/events/ludum-dare/53/deliver-or-die-2" target="_blank"><img src="images/ludum_dare.png" alt="ludum dare"></a>
+                <a href="#" target="_blank"><img src="images/download.png" alt="download"></a>
+            </div>
+            <div class="project-body">
+                <div class="project-visual">
+                    <img src="images/deliver_or_die.png" alt="deliver or die">
+                    <div class="tags">
+                        <div class="tag csharp">C#</div>
+                        <div class="tag monogame">MonoGame</div>
+                        <div class="tag ecs">entity-component-system</div>
+                        <div class="tag gamejam">gamejam</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    TODO
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <h3>Run To The Stairs</h3>
+                <a href="https://github.com/pedryx/run-to-the-stairs" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+            <div class="project-body">
+                <div class="project-visual">
+                    <img src="images/code.png" alt="code">
+                    <div class="tags">
+                        <div class="tag csharp">C#</div>
+                        <div class="tag wpf">WPF</div>
+                        <div class="tag skiasharp">SkiaSharp</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p><strong>Unfinished reimplementation of a game called "Run to the Stairs."</strong> The entire project is divided into three parts:</p>
+                    <ol>
+                        <li>
+                            <strong>GameLib:</strong> This is a library designed for creating games using Monogame as a foundation. It's built to be independent of both the rendering library and the operating system.
+                        </li>
+                        <li>
+                            <strong>RunToTheStairs:</strong> This library actually implements the game itself by utilizing the GameLib library. Similar to GameLib, it remains detached from the rendering library and operating system.
+                        </li>
+                        <li>
+                            <strong>RunToTheStairs.WPF:</strong> It serves as a concrete implementation of the game for Windows. It makes use of WPF and SkiaSharp for rendering.
+                        </li>
+                    </ol>
+                    <p>One of the features of this project is its abstract design, which enables the potential for expansion onto different operating systems and rendering libraries. Additionally, the project operates under the notion that a texture is defined just as something with width and height. This flexibility even opens up the possibility of implementing it within a console environment.</p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section id="skills">
@@ -39,6 +90,9 @@
     </section>
 
     <footer>
-        <a href="https://www.flaticon.com/free-icons/resume-and-cv" title="resume and cv icons">Resume and cv icons created by feen - Flaticon</a>
+        <div class="attributions">
+            <a href="https://www.flaticon.com/free-icons/resume-and-cv" title="resume and cv icons">Resume and cv icons created by feen - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by Aldo Cervantes - Flaticon</a>
+        </div>
     </footer>
 </body>
