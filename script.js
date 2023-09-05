@@ -144,7 +144,7 @@ const fragmentShaderSource =  `#version 300 es
     }
 `;
 
-const targetFPS = 30;
+const targetFPS = 15;
 const targetFrameTime = 1000 / targetFPS;
 
 let lastFrameTime = 0;
