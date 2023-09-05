@@ -30,7 +30,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
 }
 
 .header-links {
@@ -79,8 +78,7 @@ nav a:hover {
 */
 
 section {
-    padding: 2em;
-    display: none;
+    padding: 1em;
     text-align: center;
 }
 
