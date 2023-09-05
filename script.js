@@ -144,9 +144,7 @@ const fragmentShaderSource =  `#version 300 es
     }
 `;
 
-const targetFPS = 15;
-const targetFrameTime = 1000 / targetFPS;
-
+let targetFPS = 30;
 let lastFrameTime = 0;
 
 let gl;
@@ -157,6 +155,12 @@ let canvas;
 window.onload = function() {
     canvas = document.getElementById("glCanvas");
     gl = canvas.getContext("webgl2");
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && (window.innerWidth < window.innerHeight) ){
+        targetFPS = 15;
+        canvas.width = 512;
+        canvas.height = 512;
+    }
 
     const shaderProgram = createProgram(gl, vertexShaderSource, fragmentShaderSource);
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -194,7 +198,8 @@ function render(elapsedTime) {
     const deltaTime = elapsedTime - lastFrameTime;
     lastFrameTime = elapsedTime;
 
-    setTimeout(() => requestAnimationFrame(render), Math.max(targetFrameTime - deltaTime, 0));
+    const sleepTime = Math.max((1000 / targetFPS) - deltaTime, 0);
+    setTimeout(() => requestAnimationFrame(render), sleepTime);
 }
 
 function createShader(gl, type, source) {
