@@ -135,10 +135,9 @@ const fragmentShaderSource =  `#version 300 es
         pos *= normalize(resolution);
 
         //float height = calcNoise(pos);
-        //vec3 color = getTerrainColor(height);
+        vec3 color = getTerrainColor(pos.x / 1000.0);
 
-        //fragColor = vec4(color * 0.3, 1.0);
-        fragColor = vec4(1.0, 1.0, 1.0, 0.0);
+        fragColor = vec4(color * 0.3, 1.0);
     }
 `;
 
