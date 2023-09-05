@@ -68,7 +68,7 @@ const vertexShaderSource = `#version 300 es
 
 const fragmentShaderSource =  `#version 300 es
     precision lowp float;
-` + lygiaLib + `
+` + /*lygiaLib +*/ `
     out vec4 fragColor;
 
     struct Octave {
@@ -111,7 +111,7 @@ const fragmentShaderSource =  `#version 300 es
         float sum = 0.0;
 
         for (int i = 0; i < octaveCount; i++) {
-            value += octaves[i].weight * snoise((pos / scale) * octaves[i].frequency);
+            //value += octaves[i].weight * snoise((pos / scale) * octaves[i].frequency);
             sum += octaves[i].weight;
         }
 
@@ -133,12 +133,12 @@ const fragmentShaderSource =  `#version 300 es
 
         pos.x += time * speed;
         pos *= normalize(resolution);
-         //vec2(0.772, 0.636);
 
-        float height = calcNoise(pos);
-        vec3 color = getTerrainColor(height);
+        //float height = calcNoise(pos);
+        //vec3 color = getTerrainColor(height);
 
-        fragColor = vec4(color * 0.3, 1.0);
+        //fragColor = vec4(color * 0.3, 1.0);
+        fragColor = vec4(1.0, 1.0, 1.0, 0.0);
     }
 `;
 
