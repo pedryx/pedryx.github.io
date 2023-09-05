@@ -84,8 +84,7 @@ const fragmentShaderSource =  `#version 300 es
     const float speed = 0.1;
     const float scale = 200.0;
 
-    const int octaveCount = 5;
-    const Octave octaves[octaveCount] = Octave[](
+    const Octave octaves[5] = Octave[](
         Octave( 1.0, 0.50),
         Octave( 2.0, 0.30),
         Octave( 4.0, 0.20),
@@ -93,8 +92,7 @@ const fragmentShaderSource =  `#version 300 es
         Octave(16.0, 0.05)
     );
 
-    const int terrainCount = 6;
-    const Terrain terrains[terrainCount] = Terrain[](
+    const Terrain terrains[6] = Terrain[](
         Terrain(0.34, vec3(0.235, 0.482, 0.619)),
         Terrain(0.36, vec3(0.882, 0.788, 0.549)),
         Terrain(0.47, vec3(0.376, 0.675, 0.314)),
@@ -110,22 +108,27 @@ const fragmentShaderSource =  `#version 300 es
         float value = 0.0;
         float sum = 0.0;
 
-        for (int i = 0; i < octaveCount; i++) {
-            //value += octaves[i].weight * snoise((pos / scale) * octaves[i].frequency);
-            sum += octaves[i].weight;
+        for (int i = 0; i < octaves.length(); i++) {
+            Octave octave = octaves[i];
+
+            value += octave.weight * snoise((pos / scale) * octave.frequency);
+            sum += octave.weight;
         }
 
         return (value + sum) / (2.0 * sum);
     }
 
     vec3 getTerrainColor(float height) {
-        for (int i = 0; i < terrainCount - 1; i++) {
-            if (height < terrains[i].height) {
-                return terrains[i].color;
+        for (int i = 0; i < terrains.length() - 1; i++) {
+            Terrain terrain = terrains[i];
+
+            if (height < terrain.height) {
+                return terrain.color;
             }
         }
 
-        return terrains[terrainCount - 1].color;
+        Terrain terrain = terrains[terrains.length() - 1];
+        return terrain.color;
     }
 
     void main() {
