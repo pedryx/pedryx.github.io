@@ -186,12 +186,10 @@ function render(elapsedTime) {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     const bounds = canvas.getBoundingClientRect();
-
-    console.log(bounds.width);
-    console.log(bounds.height);
-
     gl.uniform2f(resolution, bounds.width, bounds.height);
-    gl.uniform1f(time, elapsedTime);
+
+    const totalMiliseconds = getTodayMiliseconds();
+    gl.uniform1f(time, totalMiliseconds);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
@@ -200,6 +198,16 @@ function render(elapsedTime) {
 
     const sleepTime = Math.max((1000 / targetFPS) - deltaTime, 0);
     setTimeout(() => requestAnimationFrame(render), sleepTime);
+}
+
+function getTodayMiliseconds() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const miliseconds = now.getMilliseconds();
+
+    return hours * 60 * 60 * 1000 + minutes * 60 * 1000 + seconds * 1000 + miliseconds;
 }
 
 function createShader(gl, type, source) {
