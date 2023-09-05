@@ -68,7 +68,7 @@ const vertexShaderSource = `#version 300 es
 
 const fragmentShaderSource =  `#version 300 es
     precision lowp float;
-` + /*lygiaLib +*/ `
+` + lygiaLib + `
     out vec4 fragColor;
 
     struct Octave {
