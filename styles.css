@@ -30,7 +30,7 @@ body {
 */
 
 header {
-    background-color: #232323;
+    background-color: #000000;
     padding: 0.8em;
 }
 
@@ -142,7 +142,7 @@ section h2 {
 footer {
     margin-top: auto;
     text-align: center;
-    background-color: black;
+    background-color: #000000;
 }
 
 footer a {
