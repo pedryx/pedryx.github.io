@@ -2,18 +2,18 @@
     shared
 */
 
-body, h1, h2, h3, p, ul, li {
+* {
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #777777;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #777777;
-    color: #ffffff;
 }
 
 /*
@@ -141,7 +141,13 @@ section h2 {
     width: 700px;
     text-align: justify;
     padding-left: 15px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.project-description ol {
+    padding-left: 2rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /*
@@ -202,4 +208,40 @@ footer a:hover {
 
 .procedural-generation {
     background-color:rgb(133, 163, 0);
+}
+
+@media screen and (max-width: 1350px) {
+    .header-main {
+        font-size: 1rem;
+    }
+
+    .project {
+        padding: 0;
+        padding-bottom: 50px;
+    }
+
+    .project h3 {
+        font-size: 150%;
+    }
+
+    .project-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .project-visual img {
+        width: 100%;
+    }
+
+    .project-description {
+        width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 100%;
+    }
+
+    .tags {
+        font-size: 70%;
+    }
 }
