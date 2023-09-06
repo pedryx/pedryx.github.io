@@ -81,9 +81,9 @@ const fragmentShaderSource =  `#version 300 es
         vec3 color;
     };
 
-    const float speed = 0.03;
-    const float scale = 180.0;
-    const float colorMultiplier = 0.25;
+    const float speed = 0.02;
+    const float scale = 400.0;
+    const float colorMultiplier = 0.2;
 
     const Octave octaves[5] = Octave[](
         Octave( 1.0, 0.50),
@@ -136,6 +136,7 @@ const fragmentShaderSource =  `#version 300 es
         vec2 pos = gl_FragCoord.xy;
 
         pos.x += time * speed;
+        pos.y += time * speed;
         pos *= normalize(resolution);
 
         float height = calcNoise(pos);
