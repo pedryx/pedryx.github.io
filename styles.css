@@ -140,6 +140,8 @@ section h2 {
 */
 
 footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: auto;
     text-align: center;
     background-color: #000000;
