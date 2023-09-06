@@ -67,7 +67,7 @@ const vertexShaderSource = `#version 300 es
 `;
 
 const fragmentShaderSource =  `#version 300 es
-    precision lowp float;
+    precision highp float;
 ` + lygiaLib + `
     out vec4 fragColor;
 
