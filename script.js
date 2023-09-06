@@ -83,7 +83,7 @@ const fragmentShaderSource =  `#version 300 es
 
     const float speed = 0.03;
     const float scale = 180.0;
-    const float colorMultiplier = 0.2;
+    const float colorMultiplier = 0.25;
 
     const Octave octaves[5] = Octave[](
         Octave( 1.0, 0.50),

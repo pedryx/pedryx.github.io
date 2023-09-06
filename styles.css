@@ -30,7 +30,7 @@ body {
 */
 
 header {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 0.8em;
 }
 
@@ -144,7 +144,7 @@ footer {
     padding-bottom: 10px;
     margin-top: auto;
     text-align: center;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 footer a {
