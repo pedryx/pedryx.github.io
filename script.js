@@ -158,7 +158,10 @@ window.onload = function() {
     canvas = document.getElementById("glCanvas");
     gl = canvas.getContext("webgl2");
 
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && (window.innerWidth < window.innerHeight) ){
+    if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
+        window.innerWidth < window.innerHeight
+    ) {
         targetFPS = 15;
         canvas.width = 512;
         canvas.height = 512;
