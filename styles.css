@@ -82,6 +82,7 @@ section h2 {
 
 .tags {
     display: flex;
+    font-size: 90%;
 }
 
 .tag {
@@ -198,6 +199,14 @@ footer a:hover {
     background-color: #50C878;
 }
 
+.opentk {
+    background-color: #3FB1CE;
+}
+
+.solo-made {
+    background-color: #A566E6;
+}
+
 @media screen and (max-width: 1350px) {
     .header-main {
         font-size: 1rem;
@@ -219,17 +228,21 @@ footer a:hover {
     }
 
     .project-visual img {
-        width: 100%;
+        width: 95%;
     }
 
     .project-description {
-        width: 100%;
+        width: 95%;
         margin: 0 auto;
         padding: 5px;
         font-size: 100%;
     }
 
     .tags {
-        font-size: 70%;
+        font-size: 80%;
+        padding-left: 2.5%;
+    }
+
+    section {
     }
 }

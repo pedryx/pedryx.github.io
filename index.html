@@ -36,38 +36,32 @@
                         <div class="tag ecs">ECS</div>
                         <div class="tag procedural-generation">procedural-generation</div>
                         <div class="tag shaders">shaders</div>
+                        <div class="tag solo-made">solo-made</div>
                     </div>
                 </div>
                 <div class="project-description">
-                    <p>This project is a part of my bachelor's thesis. The primary objective of this project is to explore options of the entity-component-system (ECS) pattern and to implement a game using various ECS libraries and conduct performance evaluation.</p>
+                    <p>
+                        Simulation of a world inhabited by villagers.
+                        The villagers have a simple AI that utilizes behavior trees.
+                        The terrain is procedurally generated at runtime using pixel and compute shaders.
+                    </p>
                     <br/>
-                    <p>Central to this project is the abstract ECS layer, which serves as an interface for ECS libraries. The game is designed to operate with this abstract layer, ensuring its independence from any specific ECS library.</p>
-                    <br/>
-                    <p>One of the core concepts of the game revolves around the simulation of a procedurally generated world. Through the utilization of GPU shaders, the entire world is procedurally generated at runtime. Within this virtual world, you'll find villages inhabited by villagers, each of whom possesses a simple AI system which utilizes behavior trees.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h3>Deliver or Die</h3>
-                <a href="https://github.com/pedryx/deliver-or-die" target="_blank"><img src="images/github.png" alt="GitHub"></a>
-                <a href="https://pedryx.itch.io/deliver-or-die" target="_blank"><img src="images/itchio.png" alt="itch.io"></a>
-                <a href="https://ldjam.com/events/ludum-dare/53/deliver-or-die-2" target="_blank"><img src="images/ludum_dare.png" alt="ludum dare"></a>
-                <a href="https://github.com/pedryx/deliver-or-die/releases/download/v1.0/Deliver.or.Die.zip"><img src="images/download.png" alt="download"></a>
-            </div>
-            <div class="project-body">
-                <div class="project-visual">
-                    <img src="images/deliver_or_die.png" alt="deliver or die">
-                    <div class="tags">
-                        <div class="tag csharp">C#</div>
-                        <div class="tag monogame">MonoGame</div>
-                        <div class="tag ecs">ECS</div>
-                        <div class="tag gamejam">gamejam</div>
-                    </div>
-                </div>
-                <div class="project-description">
-                    <p>Top-down zombie shooter game, where your aim is to achieve the highest score possible. This game was created for the Ludum Dare game jam in 72 hours. It utilizes the HypEcs library for entity-component-system. Moreover, it incorporates a range of features that enhance the user experience.</p>
+                    <p>
+                        This game, a major part of my bachelor's thesis,
+                        is implemented with the entity-component-system (ECS) architecture and has the following goals:
+                    </p>
+                    <ol>
+                        <li>Be independent of any concrete entity-component-system (ECS) library.</li>
+                        <li>Compare the relative performance of popular ECS libraries for C#.</li>
+                    </ol>
+                    <br/>
+                    
+                    <p>
+                        An important part of this project is the abstract ECS layer,
+                        which serves as an interface for ECS libraries.
+                        The game operates with this abstract library, making it independent on any concreate ECS library.
+                    </p>
                 </div>
             </div>
         </div>
@@ -84,26 +78,82 @@
                         <div class="tag csharp">C#</div>
                         <div class="tag wpf">WPF</div>
                         <div class="tag skiasharp">SkiaSharp</div>
+                        <div class="tag solo-made">solo-made</div>
                     </div>
                 </div>
                 <div class="project-description">
-                    <p><strong>Unfinished reimplementation of a game called "Run to the Stairs."</strong> The entire project is divided into three parts:</p>
+                    <p><strong>Unfinished reimplementation of a game called "Run to the Stairs".</strong> The entire project is divided into three parts:</p>
                     <ol>
                         <li>
-                            <strong>GameLib:</strong> This is a library designed for creating games using Monogame as a foundation. It's built to be independent of both the rendering library and the operating system.
+                            <strong>GameLib:</strong> Game library for MonoGame framework, it is designed to be independent of any concreate rendering library and operating system.
                         </li>
                         <li>
-                            <strong>RunToTheStairs:</strong> This library actually implements the game itself by utilizing the GameLib library. Similar to GameLib, it remains detached from the rendering library and operating system.
+                            <strong>RunToTheStairs:</strong> This library implements the game itself by utilizing the GameLib library. Similar to GameLib, it remains independent of any rendering library and operating system.
                         </li>
                         <li>
-                            <strong>RunToTheStairs.WPF:</strong> It serves as a concrete implementation of the game for Windows. It makes use of WPF and SkiaSharp for rendering.
+                            <strong>RunToTheStairs.WPF:</strong> Concrete implementation of the game for Windows. It makes use of WPF and SkiaSharp for rendering.
                         </li>
                     </ol>
-                    <p>One of the features of this project is its abstract design, which enables the potential for expansion onto different operating systems and rendering libraries. Additionally, the project operates under the notion that a texture is defined just as something with width and height. This flexibility even opens up the possibility of implementing it within a console environment.</p>
+                    <p>
+                        One notable feature of this project is its abstract design,
+                        enabling expansion onto different operating systems and rendering libraries.
+                        Additionally, the project uses abstraction for textures, allowing, for example, the implementation of the game in a console environment.
+                    </p>
                 </div>
             </div>
         </div>
 
+        <div class="project">
+            <div class="project-header">
+                <h3>Ray Tracer</h3>
+                <a href="https://github.com/pedryx/ray-tracer" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+            <div class="project-body">
+                <div class="project-visual">
+                    <img src="images/ray_tracer.png" alt="ray tracer">
+                    <div class="tags">
+                        <div class="tag csharp">C#</div>
+                        <div class="tag opentk">OpenTK</div>
+                        <div class="tag procedural-generation">procedural-generation</div>
+                        <div class="tag solo-made">solo-made</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>
+                        A simple command line ray tracer.
+                        Both configuration of the ray tracer and the definition of the scene can be configured with XML files.
+                        It uses procedurally generated clouds as a background.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="project">
+            <div class="project-header">
+                <h3>Deliver or Die</h3>
+                <a href="https://github.com/pedryx/deliver-or-die" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="https://pedryx.itch.io/deliver-or-die" target="_blank"><img src="images/itchio.png" alt="itch.io"></a>
+                <a href="https://ldjam.com/events/ludum-dare/53/deliver-or-die-2" target="_blank"><img src="images/ludum_dare.png" alt="ludum dare"></a>
+                <a href="https://github.com/pedryx/deliver-or-die/releases/download/v1.0/Deliver.or.Die.zip"><img src="images/download.png" alt="download"></a>
+            </div>
+            <div class="project-body">
+                <div class="project-visual">
+                    <img src="images/deliver_or_die.png" alt="deliver or die">
+                    <div class="tags">
+                        <div class="tag csharp">C#</div>
+                        <div class="tag monogame">MonoGame</div>
+                        <div class="tag ecs">ECS</div>
+                        <div class="tag gamejam">gamejam</div>
+                        <div class="tag solo-made">solo-made</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>Top-down zombie shooter game, where your aim is to achieve the highest score possible. This game was created for the Ludum Dare game jam in 72 hours. It utilizes the HypEcs library for entity-component-system.</p>
+                </div>
+            </div>
+        </div>
+        -->
     </section>
 
     <footer>
