@@ -24,6 +24,49 @@
     <section id="projects">
         <div class="project">
             <div class="project-header">
+                <h3>Blocky Adventure</h3>
+                <a href="https://github.com/pedryx/blocky-adventure" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="https://github.com/pedryx/blocky-adventure/releases/tag/v1.0"><img src="images/download.png" alt="download"></a>
+            </div>
+            <div class="project-body">
+                <div class="project-visual">
+                    <img src="images/blocky_adventure.png" alt="blocky adventure">
+                    <div class="tags">
+                        <div class="tag cpp">C++</div>
+                        <div class="tag unreal-engine">Unreal Engine</div>
+                        <div class="tag procedural-generation">procedural-generation</div>
+                        <div class="tag solo-made">solo-made</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>
+                        Minecraft-like game made in one week.
+                        The game world is procedurally generated and composed of sectors.
+                        Each sector is loaded when the player comes close to it and unloaded when the player is far away from it.
+                    </p>
+                    </br>
+                    <p>
+                        Sectors are composed of chunks, with each chunk having its own mesh.
+                        Meshes are created using the greedy meshing algorithm,
+                        which attempts to create as large a stripe as possible for each face of every block.
+                    </p>
+                    </br>
+                    <p>
+                        Chunks are saved to a file upon the destruction of any block.
+                        When the player enters the chunk for the first time, all chunks are randomly generated.
+                        Upon subsequent visits, the chunk is loaded from the file.
+                    </p>
+                    </br>
+                    <p>
+                        Each chunk is composed of blocks, which can be destroyed and placed.
+                        Different blocks have varying destruction times.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
                 <h3>World Simulator</h3>
                 <a href="https://github.com/pedryx/world-simulator" target="_blank"><img src="images/github.png" alt="GitHub"></a>
             </div>
@@ -59,7 +102,7 @@
                     <p>
                         An important part of this project is the abstract ECS layer,
                         which serves as an interface for ECS libraries.
-                        The game operates with this abstract library, making it independent on any concreate ECS library.
+                        The game operates with this layer, making it independent on any concrete ECS library.
                     </p>
                 </div>
             </div>
@@ -84,7 +127,7 @@
                     <p><strong>Partial reimplementation of a game called "Run to the Stairs".</strong> The entire project is divided into three parts:</p>
                     <ol>
                         <li>
-                            <strong>GameLib:</strong> Game library for MonoGame framework, it is designed to be independent of any concreate rendering library and operating system.
+                            <strong>GameLib:</strong> Game library for MonoGame framework, it is designed to be independent of any concrete rendering library and operating system.
                         </li>
                         <li>
                             <strong>RunToTheStairs:</strong> This library implements the game itself by utilizing the GameLib library. Similar to GameLib, it remains independent of any rendering library and operating system.

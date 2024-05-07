@@ -176,6 +176,10 @@ footer a:hover {
     background-color: #FF5733;
 }
 
+.cpp {
+    background-color: #FF5733;
+}
+
 .wpf {
     background-color: #3FB1CE;
 }
@@ -185,6 +189,10 @@ footer a:hover {
 }
 
 .monogame {
+    background-color: #FAC05E;
+}
+
+.unreal-engine {
     background-color: #FAC05E;
 }
 
