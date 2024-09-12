@@ -48,7 +48,7 @@
                     <p>
                         Sectors are composed of chunks, with each chunk having its own mesh.
                         Meshes are created using the greedy meshing algorithm,
-                        which attempts to create as large a stripe as possible for each face of every block.
+                        which attempts to create as large stripe as possible for each face of every block.
                     </p>
                     </br>
                     <p>
@@ -84,31 +84,33 @@
                 </div>
                 <div class="project-description">
                     <p>
-                        Simulation of a world with villagers.
-                        The villagers have a simple AI that utilizes behavior trees.
+                        This solution measures the performance of entity-component-system (ECS) libraries for C# using a concrete game.
+                        It is divided into two projects: the game and the benchmark.
+                    </p>
+                    </br>
+                    <p>
+                        The game simulates a world with villagers who have simple AI utilizing behavior trees.
                         The terrain is procedurally generated at runtime using pixel and compute shaders.
                     </p>
-                    <br/>
-
+                    </br>
                     <p>
-                        This game, a major part of my bachelor's thesis,
-                        is implemented with the entity-component-system (ECS) architecture and has the following goals:
+                        The game uses an abstract layer instead of a specific ECS library.
+                        This allows the game to run with different ECS libraries, which is necessary for benchmarking.
+                        I have implemented this abstract layer for each measured ECS library.
+                        The main challenge in designing the abstract layer was creating a common interface for different ECS libraries
+                        while ensuring that the abstract layer does not harm the performance of any measured ECS library.
                     </p>
-                    <ol>
-                        <li>Be independent of any concrete ECS library.</li>
-                        <li>Compare the relative performance of popular ECS libraries for C#.</li>
-                    </ol>
-                    
+                    </br>
                     <p>
-                        An important part of this project is the abstract ECS layer,
-                        which serves as an interface for ECS libraries.
-                        The game operates with this layer, making it independent on any concrete ECS library.
+                        The benchmark measures how quickly the game can simulate worlds of different sizes using various ECS libraries.
+                        Benchmark results can be found in the thesis or poster (both available in the GitHub repository, though currently only in Czech).
+                        In the future, I plan to add more ECS libraries, expand game features, refactor the code, and create a tutorial for adding ECS libraries.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="project">
+        <!-- <div class="project">
             <div class="project-header">
                 <h3>Run To The Stairs</h3>
                 <a href="https://github.com/pedryx/run-to-the-stairs" target="_blank"><img src="images/github.png" alt="GitHub"></a>
@@ -143,7 +145,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="project">
             <div class="project-header">
@@ -163,6 +165,7 @@
                 <div class="project-description">
                     <p>
                         A simple command line ray tracer.
+                        Uses simple parallelism for better performance.
                         Both configuration of the ray tracer and the definition of the scene can be configured with XML files.
                         It uses procedurally generated clouds as a background.
                     </p>
