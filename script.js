@@ -84,6 +84,7 @@ const fragmentShaderSource =  `#version 300 es
     const float speed = 0.02;
     const float scale = 400.0;
     const float colorMultiplier = 0.2;
+    const vec2 direction = vec2(1.0, -1.0);
 
     const Octave octaves[5] = Octave[](
         Octave( 1.0, 0.50),
@@ -133,11 +134,8 @@ const fragmentShaderSource =  `#version 300 es
     }
 
     void main() {
-        vec2 pos = gl_FragCoord.xy;
-
-        pos.x += time * speed;
-        pos.y += time * speed;
-        pos *= normalize(resolution);
+        vec2 pos = gl_FragCoord.xy * normalize(resolution);
+        pos += direction * time * speed;
 
         float height = calcNoise(pos);
         vec3 color = getTerrainColor(height);
@@ -156,7 +154,31 @@ let canvas;
 
 window.onload = function() {
     canvas = document.getElementById("glCanvas");
-    gl = canvas.getContext("webgl2");
+    gl = canvas.getContext("webgl2", { failIfMajorPerformanceCaveat: true });
+
+    if (!gl) {
+        alert(
+            "WebGL 2.0 is not supported on your browser or hardware, or hardware acceleration is disabled.\n\n" +
+            "As a result, the background on this site may not be displayed correctly.\n\n" +
+            "Possible solutions:\n" +
+            "1. Ensure your browser is up-to-date.\n" +
+            "2. Enable hardware acceleration in your browser settings.\n" +
+            "3. Try using a different browser that supports WebGL 2.0.\n\n" +
+            "For more information, visit your browser's support page."
+        );
+        return;
+    }
+
+    const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+    if (debugInfo) {
+        const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+        console.log(renderer);
+
+        if (renderer.toLowerCase().includes("software")) {
+            alert("Hardware acceleration is disabled or unavailable.");
+            return;
+        }
+    }
 
     if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
